@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Response } from 'express';
+import image from './images.json';
 
 @Controller()
 export class AppController {
@@ -37,5 +38,10 @@ export class AppController {
   @Get('/hello-world')
   helloWorld(): string {
     return 'Hello World!';
+  }
+  
+  @Get('/images')
+  image(): object {
+    return image;
   }
 }

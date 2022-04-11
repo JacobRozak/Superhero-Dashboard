@@ -4,7 +4,9 @@ import {
   Req,
   UnauthorizedException,
   Post,
-  Body
+  Body,
+  Delete,
+  Param,
 } from '@nestjs/common';
 import { HeroService } from './hero.service';
 import { Hero } from './hero.entity';
@@ -38,6 +40,15 @@ export class HeroController {
     await this.checkLoggedIn(request);
 
     return this.heroService.create(user);
+  }
+  @Delete('/:id')
+  async deleteUser(
+    @Req() request: Request,
+    @Param('id') id: number,
+  ): Promise<void> {
+    await this.checkLoggedIn(request);
+
+    await this.heroService.deleteById(id);
   }
 
   @Get('/')

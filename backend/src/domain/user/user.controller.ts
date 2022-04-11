@@ -54,7 +54,7 @@ export class UserController {
     @Req() request: Request,
     @Body() user: CreateUser,
   ): Promise<User> {
-    await this.checkLoggedIn(request);
+    //await this.checkLoggedIn(request);
 
     return this.userService.create(user);
   }

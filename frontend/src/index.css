@@ -1,4 +1,5 @@
 body {
+  background-color: #cdcde6;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +11,37 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#full-width-tabpanel-0{
+  background-color: #cdcde6;
+}
+.MuiBox-root.css-ag285j{
+  background-color: #cdcde6;
+}
+input{
+  background-color: white !important;
+}
+.MuiBox-root.css-16lq2zf{
+  background-color: white !important;
+  border-radius: 4px;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+  margin-left: 400px;
+}
+
+.MuiBox-root.css-16lq2zf {
+  margin-left: 300px;
+}
+
+.css-e53awj-MuiStack-root{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.MuiCardHeader-root.css-185gdzj-MuiCardHeader-root {
+  margin-left: 10px;
+}
+.MuiBox-root.css-i9gxme{
+  margin-top: 50px;
 }

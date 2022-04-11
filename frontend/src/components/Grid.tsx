@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import axios from "axios";
 import {Link} from "react-router-dom";
+import Button from '@mui/material/Button';
 
 const Img = styled('img')({
   margin: 'auto',
@@ -21,8 +22,16 @@ const Item = styled(Paper)(({ theme }) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
+  
+
 function App() {
-    const [heroes, setHeroes] = useState([{name:'', description:'', shortDescription:'', id:''}]);
+  const [heroes, setHeroes] = useState([{name:'', description:'', shortDescription:'', id:''}]);
+  var handleDelete = (id: string) => {
+    axios.delete('http://localhost:8000/heroes/'+id,{ withCredentials: true })
+    .then(function (response) {
+      setHeroes(heroes.filter((p: any) => p.id !== parseInt(id)));
+    })
+  };
     useEffect(() => {
         fetch('http://localhost:8000/heroes', {
             method: 'GET',
@@ -54,19 +63,22 @@ function App() {
               </ButtonBase>
             </Grid>
             <Grid item xs={12} sm container>
-              <Grid item xs container direction="column" spacing={2}>
+              <Grid item xs container direction="column" spacing={10}>
                 <Grid item xs>
                   <Typography gutterBottom variant="subtitle1" component="div">
                     {hero.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                  {hero.shortDescription}
+                    {hero.shortDescription}
                   </Typography>
                 </Grid>
                 <Grid item>
                   {/* <Typography sx={{ cursor: 'pointer' }} variant="body2"> */}
                     <Link to={`${hero.id}`}>Learn More</Link>
                   {/* </Typography> */}
+                </Grid>
+                <Grid item>
+                  <a href="#" className="btn btn-sm btn-outline-secondary" onClick={() => handleDelete(hero.id)}>Delete</a>
                 </Grid>
               </Grid>
               <Grid item>

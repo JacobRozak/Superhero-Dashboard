@@ -11,15 +11,18 @@ export class HeroService {
   
   async create(hero: CreateHero): Promise<Hero> {
     return this.heroRepository.create<Hero>({
-      id: hero.id,
       name: hero.name,
       shortDescription: hero.shortDescription,
-      description: hero.shortDescription,
+      description: hero.description,
       power: hero.power
     });
   }
   
   async findAll(): Promise<Hero[]> {
     return this.heroRepository.findAll<Hero>();
+  }
+  
+  async deleteById(id: number): Promise<void> {
+    await this.heroRepository.destroy({ where: { id } });
   }
 }

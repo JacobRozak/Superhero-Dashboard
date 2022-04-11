@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Box, dividerClasses, Typography } from "@mui/material";
-import Login from './Login';
-import Grid from './Grid';
+import Login from './components/Login';
+import Grid from './components/Grid1';
 import axios from "axios";
-import Superhero from './Superhero';
+import Superhero from './components/Superhero1';
 
 import {
   BrowserRouter,
@@ -45,7 +45,7 @@ function App() {
       <Route path="/heroes" element={<Grid />} />
       <Route path='/heroes/:id' element={<Superhero />} />
     </Routes>
-  </BrowserRouter>
+    </BrowserRouter>
   );
   // return (
   //   <Box sx={{ mt: 10 }}>
