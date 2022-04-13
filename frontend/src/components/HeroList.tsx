@@ -40,7 +40,7 @@ const HeroList = () => {
     }, [])
 return (
   <div>
-    <Button onClick={()=>document.cookie = 'token' + '=; Max-Age=0'} style={{marginLeft: '20px'}} variant="contained">
+    <Button color="secondary" onClick={()=>document.cookie = 'token' + '=; Max-Age=0'} style={{marginLeft: '20px'}} variant="contained">
       <Link style={{textDecoration: 'none', color: 'white'}} to='/'>Logout</Link>
     </Button>
     <Box sx={{ flexGrow: 1 }}>

@@ -6,17 +6,12 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-// import Login from './components/Login';
-// import Grid from './components/Grid1';
 import Grid from './HeroList';
 import CreateHero from "./CreateHero";
 
 import {
     BrowserRouter,
-    Routes,
-    Route,
-    Link
-  } from "react-router-dom";
+} from "react-router-dom";
 
 interface TabPanelProps {
   children?: React.ReactNode;
