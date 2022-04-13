@@ -47,7 +47,7 @@ const CreateHero = (element: any) => {
 return (
     <div>
     <Typography style={{marginLeft: '150px'}} variant="h6" gutterBottom component="div">
-      **try picking already existing heros, such as "Superman" or "Batman", to auto-fill description
+      **try picking well known heroes, such as "Superman" or "Batman", to auto-fill description
     </Typography>
     <Box component="form" noValidate onSubmit={handleRegister} sx={{ mt: 1, maxWidth: '100%',  width: 550 }}>
     <FormControl sx={{ m: 3, width: '25ch' }} variant="standard">

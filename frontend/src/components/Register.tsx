@@ -20,16 +20,16 @@ const Register = (stateChanger: any, ...rest: any) => {
         const data = new FormData(event.currentTarget);
         console.log('derp')
         stateChanger(false)
-        // axios.post('http://localhost:8000/users', {
-        //   name: data.get('name'),
-        //   password: data.get('password')
-        // })
-        // .then(function (response) {
-        //     stateChanger(false)
-        // })
-        // .catch(function (error) {
-        //   alert('Something went wrong');
-        // });
+        axios.post('http://localhost:8000/users', {
+          name: data.get('name'),
+          password: data.get('password')
+        })
+        .then(function (response) {
+            stateChanger(false)
+        })
+        .catch(function (error) {
+          alert('Something went wrong');
+        });
       };
 return (
     <div>
