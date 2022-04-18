@@ -27,22 +27,22 @@ const CreateHero = (element: any) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         (async () => {
-            try {
-                fetch('http://localhost:8000/heroes', {
-                    method: 'post',
-                    credentials: 'include',headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                  },body: JSON.stringify({name: data.get('name'), shortDescription: data.get('shortDescription'), description: data.get('description'), power: 'super human streangth and power'})
-                })
-              alert('Hero created!');
-              document.querySelectorAll("input").forEach(element => {
-                element.value = '';
-              });
-            } catch {
-              alert('not a Real hero')
-            }
-          })();
+          try {
+              fetch('http://localhost:8000/heroes', {
+                  method: 'post',
+                  credentials: 'include',headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },body: JSON.stringify({name: data.get('name'), shortDescription: data.get('shortDescription'), description: data.get('description'), power: 'super human streangth and power'})
+              })
+            alert('Hero created!');
+            document.querySelectorAll("input").forEach(element => {
+              element.value = '';
+            });
+          } catch {
+            alert('not a Real hero')
+          }
+        })();
       };
 return (
     <div>
@@ -50,44 +50,44 @@ return (
       **try picking well known heroes, such as "Superman" or "Batman", to auto-fill description
     </Typography>
     <Box component="form" noValidate onSubmit={handleRegister} sx={{ mt: 1, maxWidth: '100%',  width: 550 }}>
-    <FormControl sx={{ m: 3, width: '25ch' }} variant="standard">
-    <TextField
-      className="input"
-      onChange={handleSubmit}
-      style={{textTransform: "capitalize"}}
-      id="name"
-      label="name"
-      name="name"
-      autoComplete="name"
-    />
-    </FormControl>
-    <FormControl sx={{ m: 3, width: '25ch' }} variant="standard">
+      <FormControl sx={{ m: 3, width: '25ch' }} variant="standard">
+        <TextField
+          className="input"
+          onChange={handleSubmit}
+          style={{textTransform: "capitalize"}}
+          id="name"
+          label="name"
+          name="name"
+          autoComplete="name"
+        />
+      </FormControl>
+      <FormControl sx={{ m: 3, width: '25ch' }} variant="standard">
+        <TextField
+          className="input"
+          id="shortDescription"
+          label="Brief Description"
+          name="shortDescription"
+          autoComplete="shortDescription"
+        />
+      </FormControl>
+      <FormControl sx={{ m: 3, width: '56ch' }} variant="standard">
       <TextField
         className="input"
-        id="shortDescription"
-        label="Brief Description"
-        name="shortDescription"
-        autoComplete="shortDescription"
+        id="outlined-multiline-static"
+        name="description"
+        multiline
+        rows={10}
+        defaultValue={description}
       />
-    </FormControl>
-    <FormControl sx={{ m: 3, width: '56ch' }} variant="standard">
-    <TextField
-      className="input"
-      id="outlined-multiline-static"
-      name="description"
-      multiline
-      rows={10}
-      defaultValue={description}
-    />
-    </FormControl>
-    <Button
-      type="submit"
-      fullWidth
-      variant="contained"
-      sx={{ mt: 3, mb: 1 }}
-    >
-    Register
-    </Button>
+      </FormControl>
+      <Button
+        type="submit"
+        fullWidth
+        variant="contained"
+        sx={{ mt: 3, mb: 1 }}
+      >
+      Create
+      </Button>
     </Box>
   </div>
   );
